@@ -1,0 +1,10 @@
+d[Unit]
+Description=Upgrades automatiques des mises à jours de sécurité
+
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/unattended-upgrades 
+
+[Install]
+WantedBy=unattended-upgrades.timer

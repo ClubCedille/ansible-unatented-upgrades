@@ -1,0 +1,7 @@
+---
+
+- name: Création d'un system d'installation automatique des mises à jours de sécurités
+  become: yes
+  hosts: all
+  roles:
+     - unattended_upgrades

@@ -1,0 +1,17 @@
+---
+
+- name: installing unattended-upgrades
+  apt:
+    name: unattended-upgrades
+    state: present
+    update: yes
+
+
+- name: Transfer des fichiers systemd
+  template:
+    src: templates/{{ item }}
+    dest: /etc/systemd/system/{{ item }}
+    owner: root
+  with_items:
+    - unattended-upgrades.service
+    - unattended-upgrades.timer

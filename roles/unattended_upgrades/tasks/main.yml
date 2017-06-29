@@ -1,0 +1,17 @@
+---
+
+- name: Installation de unattended-upgrades
+  apt:
+    name: unattended-upgrades
+    update_cache: yes
+    state: present
+
+- name: Copy du fichier de config
+  copy:
+    src: ./srv/20auto-upgrades
+    dest: /etc/apt/apt.conf.d/20auto-upgrades
+    owner: root
+    mode: 0644
+
+- name: Run the unattended-upgrades at least once
+  shell: /usr/bin/unattended-upgrades
