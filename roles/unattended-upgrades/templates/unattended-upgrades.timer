@@ -1,9 +1,0 @@
-[Unit]
-Description=Run le script de unattended-upgrades à chaque 24h
-[Timer]
-OnBootSec=15min
-OnUnitActiveSec=24h
-Unit=unattended-upgrades.service
-
-[Install]
-WantedBy=multi-user.target
